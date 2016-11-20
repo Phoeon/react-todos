@@ -1,0 +1,24 @@
+module.exports = {
+	entry:{
+		index:"./main.js"
+	},
+	output:{
+		filename:"index.js",
+		path:"./"
+	},
+	devServer:{
+		inline:true,
+		port:8080
+	},
+	module:{
+		loaders:[
+			{
+				test:/\.js/,
+				loader:"babel",
+				query:{
+					presets:["es2015","react"]
+				}
+			}
+		]
+	}
+}
